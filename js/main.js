@@ -1,0 +1,7 @@
+$(function(){
+    $("#nav-toggle").on("click", function(event) {
+        event.preventDefault();
+        console.log('here');
+        $("#nav-panel").toggleClass("active");
+    });
+});

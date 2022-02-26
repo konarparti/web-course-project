@@ -52,15 +52,23 @@ body{
 .logo{
     width: 70px;
 }
+/*Header END*/
 
-/*Subheader*/
-.sub-header{
+/*Title*/
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 35vh;
+}
+.title-inner{
     margin-top: 20px;
 }
 
 /*TODO: поиграть с этим свойством посмотреть как будет выглядеть лучше (после формирования темы)*/
-.sub-header:before,
-.sub-header:after{
+.title-inner:before,
+.title-inner:after{
     content: "";
     display: block;
     width: 300px;
@@ -69,12 +77,12 @@ body{
     background-color: #333333;
 
 }
-.header-name{
+.title-name{
     text-align: center;
     font-size: 25px;
 }
 
-/*TODO: header fixed*/
+/*Title END*/
 
 /*Navigation panel*/
 .nav-panel{
@@ -129,6 +137,10 @@ body{
     display: none;
 }
 
+.nav-panel.active{
+    display: block;
+}
+
 /*TODO: nav toggle*/
 
 /*Footer*/
@@ -147,17 +159,17 @@ body{
 
 /*Phone media*/
 @media screen and (max-width: 770px){
-    .header-logo-xs{
+    .header-logo{
         font-size: 15px;
     }
-    .logo-xs{
+    .logo{
         width: 35px;
     }
-    .header-name-xs{
+    .title-name{
         font-size: 15px;
     }
-    .sub-header:before,
-    .sub-header:after{
+    .title-inner:before,
+    .title-inner:after{
         width: 50%;
         height: 2px;
         margin: 15px auto;
@@ -168,7 +180,11 @@ body{
         position: absolute;
         top: 100%;
         left: 0;
-
+    }
+    .nav-link{
+        display: block;
+        margin: 0;
+        padding: 8px 20px;
     }
     .nav-toggle{
         display: block;
