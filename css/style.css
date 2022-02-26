@@ -60,6 +60,18 @@ body{
 .sub-header{
     margin-top: 20px;
 }
+
+/*TODO: поиграть с этим свойством посмотреть как будет выглядит лучше (после формирования темы)*/
+.sub-header:before,
+.sub-header:after{
+    content: "";
+    display: block;
+    width: 300px;
+    height: 3px;
+    margin: 30px auto;
+    background-color: #333333;
+
+}
 .header-name{
     text-align: center;
     font-size: 25px;
@@ -113,5 +125,19 @@ body{
 }
 
 .nav-link.active {
-    color: #171a00;
+    color: #3d3c34;
+}
+
+/*Footer*/
+/*TODO: подвал сделать всегда прикрепленным к нижнему краю окна*/
+.footer{
+    font-family: 'Noto Sans', sans-serif;
+    position: absolute;
+    z-index: 100;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+.copyright{
 }
