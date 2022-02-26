@@ -1,5 +1,4 @@
 @import "grid.css";
-
 body{
     margin: 0;
     font-family: sans-serif;
@@ -49,9 +48,7 @@ body{
     color: #333;
     display: flex;
     align-items: center;
-
 }
-
 .logo{
     width: 70px;
 }
@@ -61,7 +58,7 @@ body{
     margin-top: 20px;
 }
 
-/*TODO: поиграть с этим свойством посмотреть как будет выглядит лучше (после формирования темы)*/
+/*TODO: поиграть с этим свойством посмотреть как будет выглядеть лучше (после формирования темы)*/
 .sub-header:before,
 .sub-header:after{
     content: "";
@@ -128,6 +125,12 @@ body{
     color: #3d3c34;
 }
 
+.nav-toggle{
+    display: none;
+}
+
+/*TODO: nav toggle*/
+
 /*Footer*/
 /*TODO: подвал сделать всегда прикрепленным к нижнему краю окна*/
 .footer{
@@ -140,4 +143,35 @@ body{
     line-height: 60px;
 }
 .copyright{
+}
+
+/*Phone media*/
+@media screen and (max-width: 770px){
+    .header-logo-xs{
+        font-size: 15px;
+    }
+    .logo-xs{
+        width: 35px;
+    }
+    .header-name-xs{
+        font-size: 15px;
+    }
+    .sub-header:before,
+    .sub-header:after{
+        width: 50%;
+        height: 2px;
+        margin: 15px auto;
+    }
+    .nav-panel{
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+    }
+    .nav-toggle{
+        display: block;
+    }
+
 }
