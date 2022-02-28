@@ -1,5 +1,5 @@
 $(function(){
-
+    $(".nav-panel:has(.active)").addClass("")
 
     //menu
     $("#nav-toggle").on("click", function(event) {

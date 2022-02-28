@@ -86,15 +86,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
 }
 
-
-
 .nav-link.active {
     /*TODO: изменение цвета когда nav элемент активен*/
 }
 
 .nav-toggle{
     width: 30px;
-    padding: 20px 0;
+    padding: 18px 0;
     display: none;
 
     font-size: 0;
@@ -129,12 +127,9 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     width: 100%;
     height: 3px;
-
     background-color: black;
-
     position: absolute;
     left: 0;
-    z-index: 1;
 }
 
 .nav-toggle-item:before {
@@ -145,15 +140,26 @@ h1, h2, h3, h4, h5, h6 {
     bottom: -8px;
 }
 
+/*TODO: разобраться с анимацией меню*/
+/*
+.nav-toggle-item-active {
+    background: none;
+}
+
+.nav-toggle-item-active:before{
+    transform-origin: left top;
+    transform: rotate(45deg) translateX(-2px);
+}
+.nav-toggle-item-active:after{
+    transform-origin: left top;
+    transform: rotate(-45deg) translateX(-5px);
+}
+*/
 
 /*Title*/
 .title {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    width: 100%;
-    height: 100vh;
-    min-height: 900px; /*TODO: еще не точно*/
+   /*TODO: еще не точно*/
 }
 .title-inner{
     margin-top: 20px;
@@ -173,7 +179,7 @@ h1, h2, h3, h4, h5, h6 {
 .title-name{
     text-align: center;
     font-weight: 500;
-    font-size: 60px;
+    font-size: 30px;
 }
 
 /*Title END*/
@@ -202,7 +208,7 @@ h1, h2, h3, h4, h5, h6 {
         width: 35px;
     }
     .title-name{
-        font-size: 30px;
+        font-size: 20px;
     }
     .title-inner:before,
     .title-inner:after{

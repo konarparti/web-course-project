@@ -3,7 +3,7 @@
     display: flex;
 }
 /* flex-container - родитель, но с вертикальным направлением оси */
-flex-column{
+.flex-column{
     display: flex;
     flex-direction: column;
 }
