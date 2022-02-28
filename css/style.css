@@ -15,8 +15,6 @@ body{
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
-
-
 .container {
     width: 100%;
     max-width: 1230px;
@@ -29,29 +27,17 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Noto Sans', sans-serif;
     width: 100%;
     padding-top: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
 }
-
-/*.header.active{
-    background-color: #f3ff99;
-}*/
-
 .header-inner{
-    display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
-
 .header-logo{
     font-family: 'Ubuntu', sans-serif;
     font-size: 30px;
     font-weight: 700;
     color: #333;
-    display: flex;
     align-items: center;
 }
 .logo{
@@ -63,18 +49,22 @@ h1, h2, h3, h4, h5, h6 {
 /*Navigation panel*/
 .nav-panel{
     font-size: 16px;
+    position: absolute;
+    right: 0;
 }
 
 .nav-link{
     display: inline-block;
     vertical-align: top;
     margin: 0 15px;
-    position: relative;
     color: #333;
     text-decoration: none;
     text-transform: uppercase;
 
     transition: color 0.2s linear;
+}
+.nav-link:hover {
+    color: #656464;
 }
 
 .nav-link:after{
@@ -82,31 +72,24 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #333333;
+    background-color: #656464;
     opacity: 0;
-
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-
     transition: opacity 0.2s linear;
-
 }
-.nav-panel.active
-{
-    display: block;
-}
-.nav-link:hover {
-    color: #171a00;
-}
-
 .nav-link:hover:after {
     opacity: 1;
 }
 
+.nav-panel.active /*это для экранов поменьше*/
+{
+    display: block;
+    margin-top: 10px;
+}
+
+
+
 .nav-link.active {
-    color: #3d3c34;
+    /*TODO: изменение цвета когда nav элемент активен*/
 }
 
 .nav-toggle{
@@ -122,8 +105,8 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 
     position: absolute;
-    top: 24px;
-    right: 24px;
+    top: 0px;
+    right: 0px;
     z-index: 1;
     outline: none;
 }
@@ -162,10 +145,6 @@ h1, h2, h3, h4, h5, h6 {
     bottom: -8px;
 }
 
-
-.nav-panel.active{
-    display: block;
-}
 
 /*Title*/
 .title {
