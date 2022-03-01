@@ -60,7 +60,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #333;
     text-decoration: none;
     text-transform: uppercase;
-
     transition: color 0.2s linear;
 }
 .nav-link:hover {
@@ -80,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
 }
 
-.nav-panel.active /*это для экранов поменьше*/
+.nav-panel.active /*TODO: это для экранов поменьше*/
 {
     display: block;
     margin-top: 10px;
@@ -120,6 +119,7 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     left: 0;
     margin: auto;
+
 }
 
 .nav-toggle-item:before,
@@ -139,22 +139,15 @@ h1, h2, h3, h4, h5, h6 {
 .nav-toggle-item:after {
     bottom: -8px;
 }
-
-/*TODO: разобраться с анимацией меню*/
-/*
-.nav-toggle-item-active {
+.nav-toggle-item.active {
     background: none;
 }
-
-.nav-toggle-item-active:before{
-    transform-origin: left top;
-    transform: rotate(45deg) translateX(-2px);
+.nav-toggle-item.active:after{
+    transform: rotate(-45deg) translate(11px);
 }
-.nav-toggle-item-active:after{
-    transform-origin: left top;
-    transform: rotate(-45deg) translateX(-5px);
+.nav-toggle-item.active:before{
+    transform: rotate(45deg) translate(11px);
 }
-*/
 
 /*Title*/
 .title {
@@ -232,5 +225,4 @@ h1, h2, h3, h4, h5, h6 {
     .nav-toggle{
         display: block;
     }
-
 }

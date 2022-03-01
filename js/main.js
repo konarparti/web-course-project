@@ -6,5 +6,6 @@ $(function(){
         event.preventDefault();
         console.log('here');
         $("#nav-panel").toggleClass("active");
+        $(".nav-toggle-item").toggleClass("active");
     });
 });
