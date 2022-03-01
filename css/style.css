@@ -15,12 +15,6 @@ body{
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
-.container {
-    width: 100%;
-    max-width: 1230px;
-    padding: 0 15px;
-    margin: 0 auto;
-}
 
 /*Header*/
 .header{
@@ -117,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: -30px;
     margin: auto;
 
 }
@@ -177,17 +171,29 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Title END*/
 
+/*Content*/
+
+.border{ /*TODO: удалить когда перестанет быть нужным*/
+    border: 3px solid black;
+}
+.content{
+    align-items: center;
+}
+.main-content{
+    justify-content: space-around;
+}
+.content-title{
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+/*Content END*/
+
 /*Footer*/
 /*TODO: подвал сделать всегда прикрепленным к нижнему краю окна*/
-.footer{
+.footer {
     font-family: 'Noto Sans', sans-serif;
     opacity: 0.5;
-    position: absolute;
-    z-index: 100;
-    bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    line-height: 60px;
 }
 .copyright{
 }

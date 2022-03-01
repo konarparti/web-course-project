@@ -14,8 +14,8 @@
 
     <header class="header">
 
-        <div class="container">
             <div class="flex-row header-inner">
+
                 <div class="flex-row header-logo">
                     <img class="logo" src="img/spbgti-tu.png" alt=""> СПБГТИ(ТУ)
                 </div>
@@ -26,31 +26,45 @@
                     <a class="nav-link active" href="#">Проверка</a>
                     <a class="nav-link active" href="#">О проекте</a>
                 </nav>
+
                 <button class="nav-toggle" id="nav-toggle" type="button">
                     <span class="nav-toggle-item ">Меню</span>
                 </button>
 
             </div>
-        </div>
     </header>
 
+    <!-- TODO: убрать лишний класс border -->
     <main>
         <div class="flex-column title">
-            <div class="container">
-                <div class="title-inner">
-                    <div class="title-name">Дистанционное приложение для проверки совместимости полимерных материалов</div>
-                </div>
-                <!-- Основной контент -->
+            <div class="title-inner">
+                <div class="title-name">Дистанционное приложение для проверки совместимости полимерных материалов</div>
             </div>
         </div>
-    </main>
-    <!--<footer class="footer">
-        <div class="container">
-           <span class="copyright">
-               &copy; Гусев Антон, 2022
-           </span>
+
+        <!-- TODO: убрать лишний стили -->
+        <div class="flex-column content border" style="height: 500px">
+                <div class="content-title">
+                    Название какое-то
+                </div>
+                <div class="flex-row main-content" style="height: 200px; ">
+                    <div class="main-content-about border" style="width: 300px;">
+                        Информация и прочее
+                    </div>
+                    <div class="svg-element border" style="width: 300px;">
+                        Отображение svg с данными из базы
+                    </div>
+                    <div class="source border" style="width: 300px;">
+                        Ссылки на литературу
+                    </div>
+                </div>
         </div>
-    </footer>-->
+    </main>
+    <footer class="flex-column footer">
+       <span class="copyright">
+           &copy; Гусев Антон, 2022
+       </span>
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
