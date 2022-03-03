@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     right: 0;
     bottom: 0;
-    left: -30px;
+    left: -40px;
     margin: auto;
     transition: background-color;
 
@@ -187,6 +187,12 @@ h1, h2, h3, h4, h5, h6 {
 .content-title{
     font-size: 22px;
     padding-bottom: 10px;
+}
+
+.setting{
+    justify-content: space-around;
+    margin: 15px;
+    width: 100%;
 }
 
 /*Content END*/

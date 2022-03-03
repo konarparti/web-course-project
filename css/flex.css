@@ -2,16 +2,15 @@
 .flex-row{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    max-width: 1230px;
-    padding: 0 15px;
-    margin: 0 auto;
+
 }
 /* flex-container - родитель, но с вертикальным направлением оси */
 .flex-column{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+.container{
     width: 100%;
     max-width: 1230px;
     padding: 0 15px;
