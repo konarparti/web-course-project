@@ -1,10 +1,8 @@
-$(function(){
-    //TODO: переписать на чистый js
-    //menu
-    $("#nav-toggle").on("click", function(event) {
-        event.preventDefault();
-        console.log('here');
-        $("#nav-panel").toggleClass("active");
-        $(".nav-toggle-item").toggleClass("active");
-    });
-});
+const navPanel = document.getElementById('nav-panel');
+const navToggleItem = document.getElementById('nav-toggle-item');
+//TODO: наверное можно как то через события
+
+const makeActive = () => {
+    navPanel.classList.toggle("active");
+    navToggleItem.classList.toggle("active")
+}
