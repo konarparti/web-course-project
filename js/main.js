@@ -1,5 +1,5 @@
 $(function(){
-
+    //TODO: переписать на чистый js
     //menu
     $("#nav-toggle").on("click", function(event) {
         event.preventDefault();
