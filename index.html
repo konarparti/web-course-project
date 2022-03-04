@@ -11,95 +11,97 @@
     <title>Главная страница</title>
 </head>
 <body>
+    <div class="wrapper">
 
-    <header class="header">
+        <header class="header">
 
-            <div class="flex-row container header-inner">
+                <div class="flex-row container header-inner">
 
-                <div class="flex-row container header-logo">
-                    <img class="logo" src="img/spbgti-tu.png" alt=""> СПБГТИ(ТУ)
+                    <div class="flex-row container header-logo">
+                        <img class="logo" src="img/spbgti-tu.png" alt=""> СПБГТИ(ТУ)
+                    </div>
+
+                    <nav class="nav-panel" id="nav-panel">
+                        <a class="nav-link active" href="#">Главная</a>
+                        <a class="nav-link active" href="#">Цели и задачи</a>
+                        <a class="nav-link active" href="#">Проверка</a>
+                        <a class="nav-link active" href="#">О проекте</a>
+                    </nav>
+
+                    <button class="nav-toggle" id="nav-toggle" type="button" onclick="makeActive()">
+                        <span class="nav-toggle-item" id="nav-toggle-item">Меню</span>
+                    </button>
+
                 </div>
+        </header>
 
-                <nav class="nav-panel" id="nav-panel">
-                    <a class="nav-link active" href="#">Главная</a>
-                    <a class="nav-link active" href="#">Цели и задачи</a>
-                    <a class="nav-link active" href="#">Проверка</a>
-                    <a class="nav-link active" href="#">О проекте</a>
-                </nav>
-
-                <button class="nav-toggle" id="nav-toggle" type="button" onclick="makeActive()">
-                    <span class="nav-toggle-item" id="nav-toggle-item">Меню</span>
-                </button>
-
-            </div>
-    </header>
-
-    <main>
-        <div class="flex-column container title">
-            <div class="title-inner">
-                <div class="title-name">Дистанционное автоматизированная система формирования композиций полимерных материалов </div>
-            </div>
-        </div>
-
-        <div class="flex-column container content">
-            <div class="content-title">
-                Настройки
-            </div>
-            <div class="flex-row setting">
-               <label>Первый полимер:</label>
-               <select id="firstPolymer" >
-                   <option>Выберите первый полимер</option>
-                   <option>Тест1</option>
-                   <option>Тест2</option>
-               </select>
-                <label>Второй полимер:</label>
-                <select id="secondPolymer">
-                    <option>Выберите второй полимер</option>
-                    <option>Тест1</option>
-                    <option>Тест2</option>
-                </select>
-                <button class="btn btn-ready">Сформировать композицию</button>
-            </div>
-            <div class="flex-row container main-content">
-                <div class="svg-element">
-                    Отображение svg с данными из базы
-                </div>
-                <div class="source">
-                    Ссылки на литературу
+        <main class="main">
+            <div class="flex-column container title">
+                <div class="title-inner">
+                    <div class="title-name">Дистанционное автоматизированная система формирования композиций полимерных материалов </div>
                 </div>
             </div>
-            <div class="flex-row container main-content">
-                <div class="svg-element">
-                    Отображение svg с данными из базы
+
+            <div class="flex-column container content">
+                <div class="content-title">
+                    Настройки
                 </div>
-                <div class="source">
-                    Ссылки на литературу
+                <div class="flex-row setting">
+                   <label>Первый полимер:</label>
+                   <select id="firstPolymer" >
+                       <option>Выберите первый полимер</option>
+                       <option>Тест1</option>
+                       <option>Тест2</option>
+                   </select>
+                    <label>Второй полимер:</label>
+                    <select id="secondPolymer">
+                        <option>Выберите второй полимер</option>
+                        <option>Тест1</option>
+                        <option>Тест2</option>
+                    </select>
+                    <button class="btn btn-ready" id="ready">Сформировать композицию</button>
+                </div>
+                <div class="flex-row container main-content">
+                    <div class="svg-element">
+                        Отображение svg с данными из базы
+                    </div>
+                    <div class="source">
+                        Ссылки на литературу
+                    </div>
+                </div>
+                <div class="flex-row container main-content">
+                    <div class="svg-element">
+                        Отображение svg с данными из базы
+                    </div>
+                    <div class="source">
+                        Ссылки на литературу
+                    </div>
+                </div>
+                <div class="flex-row container main-content">
+                    <div class="svg-element">
+                        Отображение svg с данными из базы
+                    </div>
+                    <div class="source">
+                        Ссылки на литературу
+                    </div>
+                </div>
+                <div class="flex-row container main-content">
+                    <div class="svg-element">
+                        Отображение svg с данными из базы
+                    </div>
+                    <div class="source">
+                        Ссылки на литературу
+                    </div>
                 </div>
             </div>
-            <div class="flex-row container main-content">
-                <div class="svg-element">
-                    Отображение svg с данными из базы
-                </div>
-                <div class="source">
-                    Ссылки на литературу
-                </div>
-            </div>
-            <div class="flex-row container main-content">
-                <div class="svg-element">
-                    Отображение svg с данными из базы
-                </div>
-                <div class="source">
-                    Ссылки на литературу
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer class="flex-column container footer">
-       <span class="copyright">
-           &copy; Гусев Антон, 2022
-       </span>
-    </footer>
-    <script src="js/main.js"></script>
+        </main>
+        <footer class="flex-column container footer">
+           <span class="copyright">
+               &copy; Гусев Антон, 2022
+           </span>
+        </footer>
+        <script src="js/main.js"></script>
+    </div>
 </body>
 </html>
 
