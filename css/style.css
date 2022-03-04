@@ -166,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     display: block;
     width: 300px;
-    height: 3px;
+    height: 2px;
     margin: 30px auto;
     background-color: #333333;
 
@@ -206,9 +206,47 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Content END*/
 
+/*Login*/
+
+input[type=text], input[type=password]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+.btn-success{
+    background-color: green;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: 0.8;
+}
+
+.btn-cancel{
+    font-size: 13.333px;
+    text-decoration: none;
+    color:white;
+    width: auto;
+    padding: 14px 20px;
+    background-color: #bb0a00;
+}
+
+.login-form{
+    align-items: center;
+}
+/*Login END*/
+
 /*Footer*/
 /*TODO: подвал сделать всегда прикрепленным к нижнему краю окна*/
 .footer {
+    max-width: 1230px;
+    width: 100%;
+    padding: 15px;
+    margin: 0 auto;
     flex: 0 0 auto;
     font-family: 'Noto Sans', sans-serif;
     opacity: 0.5;

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flex.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <title>Вход</title>
+</head>
+<body>
+<div class="wrapper">
+
+    <header class="header">
+
+        <div class="flex-row container header-inner">
+
+            <div class="flex-row container header-logo">
+                <img class="logo" src="img/spbgti-tu.png" alt=""> СПБГТИ(ТУ)
+            </div>
+
+            <nav class="nav-panel" id="nav-panel">
+                <a class="nav-link active" href="#">Главная</a>
+                <a class="nav-link active" href="login.html">Вход</a>
+                <a class="nav-link active" href="#">О проекте</a>
+            </nav>
+
+            <button class="nav-toggle" id="nav-toggle" type="button" onclick="makeActive()">
+                <span class="nav-toggle-item" id="nav-toggle-item">Меню</span>
+            </button>
+
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container title">
+            <div class="title-inner">
+                <div class="title-name">Вход в учетную запись </div>
+            </div>
+        </div>
+        <div>
+            <form class="flex-column login-form">
+                <label for="uname"><strong>Логин:</strong></label>
+                <input type="text" placeholder="Имя пользователя" id="uname" required>
+                <label for="pass"><strong>Пароль:</strong></label>
+                <input type="password" placeholder="Пароль" id="pass" required>
+                <div>
+                    <button class="btn btn-success" type="submit">Войти</button>
+                    <a class="btn btn-cancel" href="index.html">Отмена</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="flex-column footer">
+           <span class="copyright">
+               &copy; Гусев Антон, 2022
+           </span>
+    </footer>
+    <script src="js/main.js"></script>
+</div>
+</body>
+</html>
