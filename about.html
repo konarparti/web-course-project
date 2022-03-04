@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
@@ -8,8 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-    <title>Главная страница</title>
+    <title>О проекте</title>
 </head>
+
 <body>
 <div class="wrapper">
 
@@ -23,8 +24,8 @@
 
             <nav class="nav-panel" id="nav-panel">
                 <a class="nav-link active" href="index.html">Главная</a>
-                <a class="nav-link active" href="#">Вход</a>
-                <a class="nav-link active" href="about.html">О проекте</a>
+                <a class="nav-link active" href="login.html">Вход</a>
+                <a class="nav-link active" href="#">О проекте</a>
             </nav>
 
             <button class="nav-toggle" id="nav-toggle" type="button" onclick="makeActive()">
@@ -37,21 +38,10 @@
     <main class="main">
         <div class="flex-column container title">
             <div class="title-inner">
-                <div class="title-name">Вход в учетную запись</div>
+                <div class="title-name">О проекте</div>
             </div>
         </div>
-        <div>
-            <form class="flex-column login-form">
-                <label for="uname"><strong>Логин:</strong></label>
-                <input type="text" placeholder="Имя пользователя" id="uname" required>
-                <label for="pass"><strong>Пароль:</strong></label>
-                <input type="password" placeholder="Пароль" id="pass" required>
-                <div>
-                    <button class="btn btn-success" type="submit">Войти</button>
-                    <a class="btn btn-cancel" href="index.html">Отмена</a>
-                </div>
-            </form>
-        </div>
+        <a href="test.html">тест</a>
     </main>
     <footer class="flex-column footer">
            <span class="copyright">
@@ -59,6 +49,7 @@
            </span>
     </footer>
     <script src="js/main.js"></script>
+
 </div>
 </body>
 </html>
