@@ -102,8 +102,8 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     z-index: 1;
     outline: none;
 }
@@ -181,9 +181,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Content*/
 
-.border{ /*TODO: удалить когда перестанет быть нужным*/
-    border: 3px solid black;
-}
 .main{
     flex: 1 0 auto;
 }
@@ -202,6 +199,11 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-around;
     margin: 15px;
     width: 100%;
+}
+
+.source{
+    width: 600px;
+    flex-wrap: wrap;
 }
 
 /*Content END*/

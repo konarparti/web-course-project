@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/flex.css">
+    <link rel="stylesheet" href="css/graphStyles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -58,38 +59,40 @@
                         <option>Тест1</option>
                         <option>Тест2</option>
                     </select>
-                    <button class="btn btn-ready" id="ready">Сформировать композицию</button>
+                    <button class="btn btn-ready" id="ready" onclick="draw()">Сформировать композицию</button>
                 </div>
                 <div class="flex-row container main-content">
-                    <div class="svg-element">
-                        Отображение svg с данными из базы
+                    <div class="graph" id="graph">
                     </div>
                     <div class="source">
-                        Ссылки на литературу
-                    </div>
-                </div>
-                <div class="flex-row container main-content">
-                    <div class="svg-element">
-                        Отображение svg с данными из базы
-                    </div>
-                    <div class="source">
-                        Ссылки на литературу
-                    </div>
-                </div>
-                <div class="flex-row container main-content">
-                    <div class="svg-element">
-                        Отображение svg с данными из базы
-                    </div>
-                    <div class="source">
-                        Ссылки на литературу
+                        <div>
+                            literature_1: Rusu M., Ursu M., Rusu D. Poly(vinyl chloride) and Poly(e-caprolactone) Blends for Medical Use
+                        </div>
+                        <br>
+                        <div>
+                            literature_2: Liu W., Zhang R., Huang M., Dong X., Xu W., Ray N., Zhu J. Design and structural study of a triple-shape memory PCL/PVC blend
+                        </div>
+                        <br>
+                        <div>
+                            literature_3: Campos A., Franchetti S. Biotreatment effects in films and blends of PVC/PCL previously treated with heat
+                        </div>
                     </div>
                 </div>
                 <div class="flex-row container main-content">
-                    <div class="svg-element">
-                        Отображение svg с данными из базы
+                    <div class="graph" id="graph">
                     </div>
                     <div class="source">
-                        Ссылки на литературу
+                        <div>
+                            literature_1: Rusu M., Ursu M., Rusu D. Poly(vinyl chloride) and Poly(e-caprolactone) Blends for Medical Use
+                        </div>
+                        <br>
+                        <div>
+                            literature_2: Liu W., Zhang R., Huang M., Dong X., Xu W., Ray N., Zhu J. Design and structural study of a triple-shape memory PCL/PVC blend
+                        </div>
+                        <br>
+                        <div>
+                            literature_3: Campos A., Franchetti S. Biotreatment effects in films and blends of PVC/PCL previously treated with heat
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,7 +102,9 @@
                &copy; Гусев Антон, 2022
            </span>
         </footer>
+        <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/graph.js"></script>
     </div>
 </body>
 </html>
