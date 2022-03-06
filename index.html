@@ -38,28 +38,28 @@
         <main class="main">
             <div class="flex-column container title">
                 <div class="title-inner">
-                    <div class="title-name">Дистанционное автоматизированная система формирования композиций полимерных материалов </div>
+                    <div class="title-name">Дистанционная автоматизированная система формирования композиций полимерных материалов </div>
                 </div>
             </div>
 
-            <div class="flex-column container content">
-                <div class="content-title">
-                    Настройки
-                </div>
+            <div class="flex-column container content ">
                 <div class="flex-row setting">
-                   <label>Первый полимер:</label>
-                   <select id="firstPolymer" >
+                   <select class="form-select" id="firstPolymer" >
                        <option>Выберите первый полимер</option>
                        <option>Тест1</option>
                        <option>Тест2</option>
                    </select>
-                    <label>Второй полимер:</label>
-                    <select id="secondPolymer">
+                    <select class="form-select" id="secondPolymer">
                         <option>Выберите второй полимер</option>
                         <option>Тест1</option>
                         <option>Тест2</option>
                     </select>
                     <button class="btn btn-ready" id="ready" onclick="draw()">Сформировать композицию</button>
+                    <!--TODO: возможно сделаю изменение вида контента-->
+                    <span class="flex-row view">
+                        <a class="btn" onclick=""><img src="img/grid.svg" alt=""></a>
+                        <a class="btn" onclick=""><img src="img/list.svg" alt=""></a>
+                    </span>
                 </div>
                 <div class="flex-row container main-content">
                     <div class="graph" id="graph">
