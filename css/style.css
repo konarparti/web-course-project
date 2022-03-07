@@ -3,6 +3,7 @@ body{
     min-height: 100vh;
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
+
 }
 
 *,
@@ -245,6 +246,15 @@ input[type=text], input[type=password]{
     align-items: center;
 }
 /*Login END*/
+
+/*About*/
+.about{
+    justify-content: space-between;
+}
+.about-text{
+    font-size: 1.1em;
+}
+/*About END*/
 
 /*Footer*/
 /*TODO: подвал сделать всегда прикрепленным к нижнему краю окна*/
