@@ -57,14 +57,11 @@
                     <button class="btn btn-ready" id="ready" onclick="draw()">Сформировать композицию</button>
                     <!--TODO: возможно сделаю изменение вида контента-->
                     <span class="flex-row view">
-                        <a class="btn btn-special" onclick=""><img src="img/grid.svg" alt=""></a>
-                        <a class="btn btn-special" onclick=""><img src="img/list.svg" alt=""></a>
+                        <a class="btn btn-special" onclick="changeOnBlockView()"><img src="img/grid.svg" alt=""></a>
+                        <a class="btn btn-special"  onclick="changeOnInlineView()"><img src="img/list.svg" alt=""></a>
                     </span>
                 </div>
-                <!--<span style="width: 60%">
-                    <img src="img/caret-right.svg" width="25" style="transform: rotate(90deg)">
-                </span>-->
-                <div class="flex-row container main-content">
+                <div class="flex-row container main-content" id="block-view" style="display: none">
                     <div class="graph" id="graph">
                     </div>
                     <div class="triangle">
@@ -84,6 +81,9 @@
                            3) Campos A., Franchetti S. Biotreatment effects in films and blends of PVC/PCL previously treated with heat
                         </div>
                     </div>
+                </div>
+                <div class="flex-column container main-content inline-view" id="inline-view">
+                    <div class="content-line">Текст</div>
                 </div>
             </div>
         </main>
