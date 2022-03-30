@@ -61,7 +61,7 @@
                         <a class="btn btn-special"  onclick="changeOnInlineView()"><img src="img/list.svg" alt=""></a>
                     </span>
                 </div>
-                <div class="flex-row container main-content" id="block-view" style="display: none">
+                <div class="flex-row container main-content" id="block-view" style="">
                     <div class="graph" id="graph">
                     </div>
                     <div class="triangle">
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex-column container main-content inline-view" id="inline-view">
+                <div class="flex-column container main-content inline-view" id="inline-view" style="display: none">
                     <div class="content-line">Текст</div>
                 </div>
             </div>
@@ -92,7 +92,10 @@
                &copy; Гусев Антон, 2022
            </span>
         </footer>
-        <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
+        <script src="//cdn.amcharts.com/lib/4/core.js"></script>
+        <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
+        <script src="//cdn.amcharts.com/lib/4/themes/animated.js"></script>
+        <script src="//cdn.amcharts.com/lib/4/plugins/forceDirected.js"></script>
         <script src="js/main.js"></script>
         <script src="js/graph.js"></script>
     </div>
