@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link.active {
-    /*TODO: изменение цвета когда nav элемент активен*/
+   font-weight: 1000;
 }
 
 .nav-toggle{
@@ -233,11 +233,16 @@ h1, h2, h3, h4, h5, h6 {
 .inline-view{
 
 }
+/*TODO: сделать стили для этого списка*/
+.content-line{
+    width: 100%;
+    text-decoration: none;
+}
 .content-line:before,
 .content-line:after{
     content: "";
     display: block;
-    width: 1230px;
+    width: 100%;
     height: 2px;
     margin: 10px auto;
     background-color: #333333;
