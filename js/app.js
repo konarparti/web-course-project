@@ -34,4 +34,3 @@ session.run('MATCH (n) RETURN n.name')
 setTimeout(()=>{
     console.table(arrayOfPolymers);
 }, 1000)
-
