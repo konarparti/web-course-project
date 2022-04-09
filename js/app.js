@@ -24,8 +24,8 @@ session.run('MATCH (n) RETURN n.name')
                     arrayOfPolymers.push(record.get('n.name'))
                 }
             },
-            onCompleted: () => {
-                session.close() // returns a Promise
+            onCompleted: async () => {
+                await session.close() // returns a Promise
             },
             onError: error => {
                 console.log(error)
@@ -34,3 +34,4 @@ session.run('MATCH (n) RETURN n.name')
 setTimeout(()=>{
     console.table(arrayOfPolymers);
 }, 1000)
+

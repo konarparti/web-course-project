@@ -1,3 +1,5 @@
+// import {arrayOfPolymers}  from "/js/app.js"
+
 const navToggle = document.getElementById('nav-toggle');
 const navPanel = document.getElementById('nav-panel');
 const navToggleItem = document.getElementById('nav-toggle-item');
@@ -19,3 +21,8 @@ const changeOnInlineView = () =>{
     inlineView.style.display = "";
     blockView.style.display = "none";
 }
+
+// const selectFirst = document.getElementById('firstPolymer');
+// for (const arrayOfPolymer of arrayOfPolymers) {
+//     selectFirst.append(new Option(arrayOfPolymer.toString()))
+// }
