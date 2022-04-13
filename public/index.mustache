@@ -46,13 +46,19 @@
                 <div class="flex-row setting">
                    <select class="form-select" id="firstPolymer" >
                        <option>Выберите первый полимер</option>
-                       <option>Тест1</option>
-                       <option>Тест2</option>
+                       {{#arrayOfPolymers}}
+                           <option>
+                               {{properties.name}}
+                           </option>
+                       {{/arrayOfPolymers}}
                    </select>
                     <select class="form-select" id="secondPolymer">
                         <option>Выберите второй полимер</option>
-                        <option>Тест1</option>
-                        <option>Тест2</option>
+                        {{#arrayOfPolymers}}
+                            <option>
+                                {{properties.name}}
+                            </option>
+                        {{/arrayOfPolymers}}
                     </select>
                     <button class="btn btn-ready" id="ready" onclick="draw()">Сформировать композицию</button>
                     <!--TODO: возможно сделаю изменение вида контента-->
