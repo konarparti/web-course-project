@@ -12,6 +12,13 @@ const session = driver.session({
 })
 
 let arrayOfPolymers = [];
+let answer = { arrayOfPolymers}
+class Polymer{
+    constructor(name) {
+        this.name = name
+    }
+};
+
 
 session.run('MATCH (n) RETURN n.name')
     .subscribe({
@@ -20,8 +27,7 @@ session.run('MATCH (n) RETURN n.name')
             },
             onNext: record => {
                 if(record.get('n.name') != null){
-                    console.log(record.get("n.name"));
-                    arrayOfPolymers.push(record.get('n.name'))
+                    arrayOfPolymers.push(new Polymer(record.get('n.name')));
                 }
             },
             onCompleted: async () => {
@@ -32,5 +38,7 @@ session.run('MATCH (n) RETURN n.name')
             }
     });
 setTimeout(()=>{
-    console.table(arrayOfPolymers);
+    console.dir(answer);
 }, 1000)
+
+module.exports = {answer}
