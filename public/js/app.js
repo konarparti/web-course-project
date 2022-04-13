@@ -20,14 +20,14 @@ class Polymer{
 };
 
 
-session.run('MATCH (n) RETURN n.name')
+session.run('MATCH (n) RETURN n')
     .subscribe({
             onKeys: keys => {
                 console.log(keys)
             },
             onNext: record => {
-                if(record.get('n.name') != null){
-                    arrayOfPolymers.push(new Polymer(record.get('n.name')));
+                if(record.get('n') != null){
+                    arrayOfPolymers.push(record.get('n'));
                 }
             },
             onCompleted: async () => {
@@ -38,7 +38,7 @@ session.run('MATCH (n) RETURN n.name')
             }
     });
 setTimeout(()=>{
-    console.dir(answer);
+    console.table(answer.arrayOfPolymers);
 }, 1000)
 
 module.exports = {answer}
