@@ -62,7 +62,6 @@ buttonReady.addEventListener('click', requestPolymer);
 
 //Graph
 const graphFunction = (graphValue) => {
-    console.log(graphValue);
     let chart = am4core.create("graph", am4plugins_forceDirected.ForceDirectedTree);
 
     let series = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries());
@@ -71,23 +70,27 @@ const graphFunction = (graphValue) => {
         am4core.color("#7ac")
     ];
 
-    series.data = [{
-        "name": "SBS",
-        "value": 1,
-        "link": ["PB"]
-    }, {
-        "name": "PS",
-        "value": 1,
-        "link": ["PB"]
-    }, {
-        "name": "PE",
-        "value": 1,
-        "link": ["PB"]
-    },
-        {
-            "name": "PB",
-            "value": 1
-        }];
+    let data = [];
+    let link = [];
+    class Node{
+        constructor(name, link) {
+            this.name = name;
+            this.value = 1;
+            this.link = [];
+
+            for (let i = 0; i < link.length; ++i){
+                this.link[i] = link[i];
+            }
+        }
+    }
+
+    link.push(selectedFirstValue, selectedSecondValue);
+
+    data.push(new Node(selectedFirstValue, [graphValue.arrayOfPolymers[0].properties.name]));
+    data.push(new Node(graphValue.arrayOfPolymers[0].properties.name, link));
+    data.push(new Node(selectedSecondValue, [graphValue.arrayOfPolymers[0].properties.name]));
+
+    series.data = data;
 // Set up data fields
     series.dataFields.id = "name";
     series.dataFields.value = "value"
