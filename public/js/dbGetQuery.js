@@ -15,19 +15,20 @@ const main = (firstPolymer, secondPolymer) => {
     })
 
     let arrayOfPolymers = [];
-    let answer = { arrayOfPolymers};
+    let pathOne = [];
+    let pathTwo = [];
+    let answer = { arrayOfPolymers, pathOne, pathTwo};
 
-    let query = `MATCH (f1{name:"${firstPolymer}"})\n 
-    MATCH (f2{name:"${secondPolymer}"})\n 
-    MATCH path = shortestPath( (f1)-[relation*1..]->(f2) )\n 
-    RETURN path;`
+    let query = `MATCH (f1{name:"${firstPolymer}"})-[p1]-(Polymer)-[p2]-(f2{name:"${secondPolymer}"}) return Polymer, p1, p2`
 
     session.run(query)
         .subscribe({
             onKeys: keys => {
             },
             onNext: record => {
-                arrayOfPolymers.push(record.get('path'));
+                arrayOfPolymers.push(record.get('Polymer'));
+                pathOne.push(record.get('p1'));
+                pathTwo.push(record.get('p2'));
             },
             onCompleted: async () => {
                 await session.close() // returns a Promise
@@ -36,10 +37,8 @@ const main = (firstPolymer, secondPolymer) => {
                 console.log(error)
             }
         });
-    setTimeout(()=>{
-        console.table(answer.arrayOfPolymers);
-    }, 1000)
-    return answer
+    return answer;
+
 }
 
 module.exports = {main};

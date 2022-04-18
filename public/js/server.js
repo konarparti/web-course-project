@@ -27,12 +27,15 @@ app.get('/api/getAllPolymers', (req,res) => {
     res.json(answer);
 });
 
-app.post('/api/postPolymers', (req,res)=>{
+app.post('/api/postPolymers',(req, res) => {
     firstSelected = req.body.firstPolymer;
     secondSelected = req.body.secondPolymer;
-    console.log(firstSelected + " " + secondSelected);
     dbResponse = main(firstSelected, secondSelected);
-    res.send(dbResponse.arrayOfPolymers);
+    res.send(dbResponse);
+})
+
+app.get('/api/test', (req, res) => {
+    res.send(dbResponse);
 })
 
 app.all("*", (req, res) =>{

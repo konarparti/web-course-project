@@ -37,8 +37,8 @@ session.run('MATCH (n) RETURN n')
                 console.log(error)
             }
     });
-setTimeout(()=>{
-    console.table(answer.arrayOfPolymers);
-}, 1000)
+// setTimeout(()=>{
+//     console.table(answer.arrayOfPolymers);
+// }, 1000)
 
 module.exports = {answer}
