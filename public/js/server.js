@@ -34,7 +34,7 @@ app.post('/api/postPolymers',(req, res) => {
     res.send(dbResponse);
 })
 
-app.get('/api/test', (req, res) => {
+app.get('/api/getByQuery', (req, res) => {
     res.send(dbResponse);
 })
 

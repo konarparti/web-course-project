@@ -14,21 +14,20 @@ const main = (firstPolymer, secondPolymer) => {
         defaultAccessMode: neo4j.session.READ
     })
 
-    let arrayOfPolymers = [];
-    let pathOne = [];
-    let pathTwo = [];
-    let answer = { arrayOfPolymers, pathOne, pathTwo};
+    let paths = [];
+    let answer = {paths};
 
-    let query = `MATCH (f1{name:"${firstPolymer}"})-[p1]-(Polymer)-[p2]-(f2{name:"${secondPolymer}"}) return Polymer, p1, p2`
+    let query = `MATCH (f1{name:"${firstPolymer}"}) 
+    MATCH (f2{name:"${secondPolymer}"})
+    MATCH path = shortestPath( (f1)-[relation*1..]->(f2) )
+    RETURN path;`
 
     session.run(query)
         .subscribe({
             onKeys: keys => {
             },
             onNext: record => {
-                arrayOfPolymers.push(record.get('Polymer'));
-                pathOne.push(record.get('p1'));
-                pathTwo.push(record.get('p2'));
+                paths.push(record.get('path'));
             },
             onCompleted: async () => {
                 await session.close() // returns a Promise
@@ -37,6 +36,9 @@ const main = (firstPolymer, secondPolymer) => {
                 console.log(error)
             }
         });
+    setTimeout(()=>{
+        console.dir(answer.paths[0].start.properties.name);
+    }, 1000);
     return answer;
 
 }

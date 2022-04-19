@@ -44,7 +44,7 @@ const requestPolymer = () =>{
         });
 
     setTimeout(() => {
-        axios.get('/api/test')
+        axios.get('/api/getByQuery')
             .then(function (response) {
                 graphFunction(response.data);
             })
@@ -71,24 +71,22 @@ const graphFunction = (graphValue) => {
     ];
 
     let data = [];
-    let link = [];
     class Node{
         constructor(name, link) {
             this.name = name;
-            this.value = 1;
             this.link = [];
 
-            for (let i = 0; i < link.length; ++i){
+            for (let i = 0; i < link.length; i++){
                 this.link[i] = link[i];
             }
         }
     }
 
-    link.push(selectedFirstValue, selectedSecondValue);
+    let startNode = graphValue.paths[0].start.properties.name;
+    let endNode = graphValue.paths[0].end.properties.name;
 
-    data.push(new Node(selectedFirstValue, [graphValue.arrayOfPolymers[0].properties.name]));
-    data.push(new Node(graphValue.arrayOfPolymers[0].properties.name, link));
-    data.push(new Node(selectedSecondValue, [graphValue.arrayOfPolymers[0].properties.name]));
+    data.push(new Node(startNode, []));
+    data.push(new Node(endNode, []));
 
     series.data = data;
 // Set up data fields
