@@ -82,11 +82,27 @@ const graphFunction = (graphValue) => {
         }
     }
 
-    let startNode = graphValue.paths[0].start.properties.name;
-    let endNode = graphValue.paths[0].end.properties.name;
+   try{
+        let startNode = graphValue.paths[0].start.properties.name;
+        let endNode = graphValue.paths[0].end.properties.name;
+        let anotherNodes = [];
+        for(let i = 0; i < graphValue.paths[0].segments.length; i++){
+            anotherNodes.push(graphValue.paths[0].segments[i].end.properties.name);
+        }
 
-    data.push(new Node(startNode, []));
-    data.push(new Node(endNode, []));
+        data.push(new Node(startNode, []));
+        data.push(new Node(endNode, []));
+
+       for(let i = 0; i < anotherNodes.length - 1; i++){
+           console.log(anotherNodes[i]);
+           data.push(new Node(anotherNodes[i], []));
+       }
+   }
+    catch (e) {
+        data.push(new Node('Data', ['No']));
+        data.push(new Node('No', ['Data']));
+
+    }
 
     series.data = data;
 // Set up data fields

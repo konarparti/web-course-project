@@ -36,9 +36,9 @@ const main = (firstPolymer, secondPolymer) => {
                 console.log(error)
             }
         });
-    setTimeout(()=>{
-        console.dir(answer.paths[0].start.properties.name);
-    }, 1000);
+    // setTimeout(()=>{
+    //     console.dir(answer.paths[0].segments[0]);
+    // }, 1000);
     return answer;
 
 }
