@@ -1,5 +1,5 @@
 
-const main = (firstPolymer, secondPolymer) => {
+const main = (firstPolymer, secondPolymer, callback) => {
 
     const neo4j = require('neo4j-driver');
     const {error} = require("neo4j-driver");
@@ -31,15 +31,17 @@ const main = (firstPolymer, secondPolymer) => {
             },
             onCompleted: async () => {
                 await session.close() // returns a Promise
+                callback(null, answer);
             },
             onError: error => {
                 console.log(error)
+                callback(err);
             }
         });
     // setTimeout(()=>{
     //     console.dir(answer.paths[0].segments[0]);
     // }, 1000);
-    return answer;
+    //return answer;
 
 }
 

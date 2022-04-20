@@ -30,8 +30,14 @@ app.get('/api/getAllPolymers', (req,res) => {
 app.post('/api/postPolymers',(req, res) => {
     firstSelected = req.body.firstPolymer;
     secondSelected = req.body.secondPolymer;
-    dbResponse = main(firstSelected, secondSelected);
-    res.send(dbResponse);
+    dbResponse = main(firstSelected, secondSelected, (err, dbResponse)=>{
+      if(err) {
+          res.status = 500;
+          return res.end();
+      }
+
+      res.json(dbResponse);
+    });
 })
 
 app.get('/api/getByQuery', (req, res) => {

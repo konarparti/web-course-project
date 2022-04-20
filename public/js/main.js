@@ -34,6 +34,7 @@ const requestPolymer = () =>{
         firstPolymer: selectedFirstValue.toString(),
         secondPolymer: selectedSecondValue.toString()
     }).then(function (response) {
+        graphFunction(response.data);
         })
         .catch(function (error) {
             // handle error
@@ -43,7 +44,7 @@ const requestPolymer = () =>{
             // always executed
         });
 
-    setTimeout(() => {
+    /*setTimeout(() => {
         axios.get('/api/getByQuery')
             .then(function (response) {
                 graphFunction(response.data);
@@ -55,7 +56,7 @@ const requestPolymer = () =>{
             .then(function () {
                 // always executed
             });
-    }, 1000);
+    }, 1000);*/
 }
 
 buttonReady.addEventListener('click', requestPolymer);
@@ -82,7 +83,7 @@ const graphFunction = (graphValue) => {
         }
     }
 
-   try{
+
         let startNode = graphValue.paths[0].start.properties.name;
         let endNode = graphValue.paths[0].end.properties.name;
         let anotherNodes = [];
@@ -97,12 +98,12 @@ const graphFunction = (graphValue) => {
            console.log(anotherNodes[i]);
            data.push(new Node(anotherNodes[i], []));
        }
-   }
-    catch (e) {
-        data.push(new Node('Data', ['No']));
-        data.push(new Node('No', ['Data']));
 
-    }
+    // catch (e) {
+    //     data.push(new Node('Data', ['No']));
+    //     data.push(new Node('No', ['Data']));
+    //
+    // }
 
     series.data = data;
 // Set up data fields
