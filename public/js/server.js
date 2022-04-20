@@ -13,38 +13,34 @@ let secondSelected;
 
 app.use(express.static(path.join(__dirname, '../')));
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.set('views', path.join(__dirname, '../'));
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     res.render('index', answer)
 });
 
-app.get('/api/getAllPolymers', (req,res) => {
+app.get('/api/getAllPolymers', (req, res) => {
     res.json(answer);
 });
 
-app.post('/api/postPolymers',(req, res) => {
+app.post('/api/postPolymers', (req, res) => {
     firstSelected = req.body.firstPolymer;
     secondSelected = req.body.secondPolymer;
-    dbResponse = main(firstSelected, secondSelected, (err, dbResponse)=>{
-      if(err) {
-          res.status = 500;
-          return res.end();
-      }
-
-      res.json(dbResponse);
+    // noinspection JSVoidFunctionReturnValueUsed
+    dbResponse = main(firstSelected, secondSelected, (err, dbResponse) => {
+        if (err) {
+            res.status = 500;
+            return res.end();
+        }
+        res.json(dbResponse);
     });
 })
 
-app.get('/api/getByQuery', (req, res) => {
-    res.send(dbResponse);
-})
-
-app.all("*", (req, res) =>{
+app.all("*", (req, res) => {
     res.status(404).send('Resource not found');
 })
 
