@@ -12,8 +12,9 @@ const session = driver.session({
 })
 
 let arrayOfPolymers = [];
-let answer = { arrayOfPolymers}
-class Polymer{
+let answer = {arrayOfPolymers}
+
+class Polymer {
     constructor(name) {
         this.name = name
     }
@@ -22,23 +23,20 @@ class Polymer{
 
 session.run('MATCH (n) RETURN n')
     .subscribe({
-            onKeys: keys => {
-                console.log(keys)
-            },
-            onNext: record => {
-                if(record.get('n') != null){
-                    arrayOfPolymers.push(record.get('n'));
-                }
-            },
-            onCompleted: async () => {
-                await session.close() // returns a Promise
-            },
-            onError: error => {
-                console.log(error)
+        onKeys: keys => {
+            console.log(keys)
+        },
+        onNext: record => {
+            if (record.get('n') != null) {
+                arrayOfPolymers.push(record.get('n'));
             }
+        },
+        onCompleted: async () => {
+            await session.close() // returns a Promise
+        },
+        onError: error => {
+            console.log(error)
+        }
     });
-// setTimeout(()=>{
-//     console.table(answer.arrayOfPolymers);
-// }, 1000)
 
 module.exports = {answer}

@@ -31,9 +31,9 @@ app.post('/api/postPolymers', (req, res) => {
     firstSelected = req.body.firstPolymer;
     secondSelected = req.body.secondPolymer;
     // noinspection JSVoidFunctionReturnValueUsed
-    dbResponse = main(firstSelected, secondSelected, (err, dbResponse) => {
-        if (err) {
-            res.status = 500;
+    dbResponse = main(firstSelected, secondSelected, (error, dbResponse) => {
+        if (error) {
+            res.status(500)
             return res.end();
         }
         res.json(dbResponse);

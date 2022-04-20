@@ -26,6 +26,8 @@ const selectSecond = document.getElementById('secondPolymer');
 let selectedSecondValue = selectSecond.value;
 const buttonReady = document.getElementById('ready');
 
+const sourceDiv = document.getElementById('source');
+
 const requestPolymer = () => {
     selectedFirstValue = selectFirst.value;
     selectedSecondValue = selectSecond.value;
@@ -42,20 +44,6 @@ const requestPolymer = () => {
         .then(function () {
             // always executed
         });
-
-    /*setTimeout(() => {
-        axios.get('/api/getByQuery')
-            .then(function (response) {
-                graphFunction(response.data);
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .then(function () {
-                // always executed
-            });
-    }, 1000);*/
 }
 
 buttonReady.addEventListener('click', requestPolymer);
@@ -90,28 +78,44 @@ const graphFunction = (graphValue) => {
         let startNode = graphValue.paths[0].start.properties.name;
         let endNode = graphValue.paths[0].end.properties.name;
         let anotherNodes = [];
+        let sources = []
         for (let i = 0; i < graphValue.paths[0].segments.length - 1; i++) {
             anotherNodes.push(new Node(graphValue.paths[0].segments[i].end.properties.name, [graphValue.paths[0].segments[i + 1].end.properties.name]));
+            sources.push(Object.values(graphValue.paths[0].segments[i].relationship.properties));
+            sources.push(Object.values(graphValue.paths[0].segments[i + 1].relationship.properties));
         }
-        data.push(new Node(startNode, [anotherNodes[0].name]));
+        if (anotherNodes[0]) {
+            data.push(new Node(startNode, [anotherNodes[0].name]));
+        }
+        data.push(new Node(startNode, [endNode]));
         data.push(new Node(endNode, null));
 
         for (let i = 0; i < anotherNodes.length; i++) {
             data.push(new Node(anotherNodes[i].name, [anotherNodes[i].link]));
         }
-        console.log(data.name);
+
+        let stringSource = '';
+        let num = 1;
+        for (let i = 0; i < sources.length; i++) {
+            for (let j = 0; j < sources[i].length; j++) {
+                stringSource = stringSource + `${num}) ` + sources[i][j];
+                stringSource = `${stringSource}<br><br>`;
+                num++;
+            }
+        }
+        sourceDiv.innerHTML = stringSource;
+        console.log(sources);
     } catch (e) {
+        console.log(e);
         data.push(new Node('Data', ['No']));
         data.push(new Node('No', ['Data']));
 
     }
 
     series.data = data;
-// Set up data fields
     series.dataFields.id = "name";
     series.dataFields.value = "value"
     series.dataFields.linkWith = "link";
-// Add labels
     series.nodes.template.label.text = "{name}";
     series.fontSize = 16;
     series.minRadius = 35;

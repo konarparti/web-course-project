@@ -1,4 +1,3 @@
-
 const main = (firstPolymer, secondPolymer, callback) => {
 
     const neo4j = require('neo4j-driver');
@@ -35,13 +34,9 @@ const main = (firstPolymer, secondPolymer, callback) => {
             },
             onError: error => {
                 console.log(error)
-                callback(err);
+                callback(error);
             }
         });
-    // setTimeout(()=>{
-    //     console.dir(answer.paths[0].segments[0]);
-    // }, 1000);
-    //return answer;
 
 }
 
