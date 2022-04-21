@@ -45,8 +45,8 @@ const requestPolymer = () => {
             // always executed
         });
 }
-
 buttonReady.addEventListener('click', requestPolymer);
+
 
 let chart = am4core.create("graph", am4plugins_forceDirected.ForceDirectedTree);
 ;

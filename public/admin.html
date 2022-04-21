@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/flex.css">
+    <link rel="stylesheet" href="css/graphStyles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -22,9 +23,7 @@
             </div>
 
             <nav class="nav-panel" id="nav-panel">
-                <a class="nav-link" href="/">Главная</a>
-                <a class="nav-link active" href="#">Вход</a>
-                <a class="nav-link" href="about.html">О проекте</a>
+                <a class="nav-link" href="/">Выход</a>
             </nav>
 
             <button class="nav-toggle" id="nav-toggle" type="button">
@@ -37,20 +36,13 @@
     <main class="main">
         <div class="flex-column container title">
             <div class="title-inner">
-                <div class="title-name">Вход в учетную запись</div>
+                <div class="title-name">Панель администратора
+                </div>
             </div>
         </div>
-        <div>
-            <form class="flex-column login-form">
-                <label for="uname"><strong>Логин:</strong></label>
-                <input type="text" placeholder="Имя пользователя" id="uname" required>
-                <label for="pass"><strong>Пароль:</strong></label>
-                <input type="password" placeholder="Пароль" id="pass" required>
-                <div>
-                    <a class="btn btn-success" id="login">Войти</a>
-                    <a class="btn btn-cancel" href="/">Отмена</a>
-                </div>
-            </form>
+
+        <div class="flex-column container content ">
+
         </div>
     </main>
     <footer class="flex-column footer">
@@ -58,8 +50,6 @@
                &copy; Гусев Антон, 2022
            </span>
     </footer>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/login.js"></script>
 </div>
 </body>
 </html>
