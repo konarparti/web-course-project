@@ -42,7 +42,21 @@
         </div>
 
         <div class="flex-column container content ">
+            <div class="flex-row setting">
+                <input class="form-select" id="newPolymer" placeholder="Введите название полимера"/>
+                <select class="form-select" id="oldPolymer">
+                    <option>Выберите совместимый полимер</option>
+                    {{#arrayOfPolymers}}
+                        <option>
+                            {{properties.name}}
+                        </option>
+                    {{/arrayOfPolymers}}
+                </select>
+                Обратная совместимость:
+                <input type="checkbox" id="isReverse"/>
+                <button class="btn btn-ready" id="ready">Добавить полимер</button>
 
+            </div>
         </div>
     </main>
     <footer class="flex-column footer">
@@ -50,6 +64,8 @@
                &copy; Гусев Антон, 2022
            </span>
     </footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/admin.js"></script>
 </div>
 </body>
 </html>

@@ -23,7 +23,7 @@ const login = () => {
         password: pass
     }).then(function (response) {
         console.log(response.data)
-        window.location.href = 'admin.html';
+        window.location.href = '/admin';
     })
         .catch(function (error) {
             // handle error

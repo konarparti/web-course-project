@@ -8,6 +8,7 @@ const session = require('express-session');
 const app = express();
 const {answer} = require('./dbGetAll');
 const {main} = require('./dbGetQuery');
+const {addPolymer} = require('./dbAddQuery');
 const port = 8080;
 
 let users = [
@@ -17,6 +18,10 @@ let users = [
 let dbResponse;
 let firstSelected;
 let secondSelected;
+
+let newPolymerName;
+let oldPolymerName;
+let isReverse;
 
 app.use(cookieParser());
 app.use(session({
@@ -55,6 +60,10 @@ app.get('/', (req, res) => {
     res.render('index', answer)
 });
 
+app.get('/admin', (req, res) => {
+    res.render('admin', answer)
+});
+
 app.get('/api/getAllPolymers', (req, res) => {
     res.json(answer);
 });
@@ -65,12 +74,25 @@ app.post('/api/postPolymers', (req, res) => {
     // noinspection JSVoidFunctionReturnValueUsed
     dbResponse = main(firstSelected, secondSelected, (error, dbResponse) => {
         if (error) {
-            res.status(500)
+            res.status(500);
             return res.end();
         }
         res.json(dbResponse);
     });
 })
+
+app.post('/api/createPolymer', (req, res) => {
+    newPolymerName = req.body.newPolymer;
+    oldPolymerName = req.body.oldPolymer;
+    isReverse = req.body.isReverse;
+    addPolymer(newPolymerName, oldPolymerName, isReverse, (error, response) => {
+        if (error) {
+            res.status(500);
+            return res.end();
+        }
+        res.send(response);
+    })
+});
 
 app.all("*", (req, res) => {
     res.status(404).send('Resource not found');
