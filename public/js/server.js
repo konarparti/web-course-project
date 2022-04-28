@@ -48,7 +48,7 @@ app.post('/login', function (req, res) {
     }
     if (foundUser !== undefined) {
         req.session.username = foundUser;
-        res.send('?'); //надо как то перенаправить на страницу admin
+        res.send();
         return;
     } else {
         console.log('fail: user: ' + req.body.username);
@@ -61,6 +61,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/admin', (req, res) => {
+    if(!req.session.username){
+        res.status(401).send();
+        return;
+    }
     res.render('admin', answer)
 });
 

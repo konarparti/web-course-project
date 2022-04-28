@@ -87,7 +87,9 @@ const graphFunction = (graphValue) => {
         if (anotherNodes[0]) {
             data.push(new Node(startNode, [anotherNodes[0].name]));
         }
-        data.push(new Node(startNode, [endNode]));
+        else{
+            data.push(new Node(startNode, [endNode]));
+        }
         data.push(new Node(endNode, null));
 
         for (let i = 0; i < anotherNodes.length; i++) {
